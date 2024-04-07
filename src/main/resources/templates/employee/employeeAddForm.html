@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Employee</title>
+    <link type="text/css" rel="stylesheet" th:href="@{/css/bootstrap.css}">
+</head>
+<body>
+<section class="container p-3 d-flex flex-column g-5  justify-content-center align-items-center">
+    <h1 class="text-center">Add Employee</h1>
+    <form class="form-group d-flex flex-column justify-content-center align-items-center gap-2 mt-5" th:action="@{/api/v1/employees}" method="post" th:object="${employee}">
+        <label>
+            <input type="text" placeholder="Id" class="form-control visually-hidden" th:field="*{id}">
+        </label>
+        <label class="form-label">
+            <input type="text" placeholder="First Name" class="form-control" th:field="*{firstName}">
+        </label>
+        <label class="form-label">
+            <input type="text" placeholder="Last Name" class="form-control" th:field="*{lastName}">
+        </label>
+        <label class="form-label">
+            <input type="text" placeholder="Position" class="form-control" th:field="*{position}">
+        </label>
+        <label class="form-label">
+            <input type="text" placeholder="Address" class="form-control" th:field="*{address}">
+        </label>
+        <label class="form-label">
+            <input type="text" placeholder="Mobile Number" class="form-control" th:field="*{mobileNumber}">
+        </label>
+        <label class="form-label">
+            <input type="email" placeholder="Email" class="form-control" th:field="*{email}">
+        </label>
+        <button type="submit" class="d-block btn btn-primary p-2 rounded">Add Employee</button>
+        <a th:href="@{/api/v1/employees}" class="link-info">Employee Table</a>
+    </form>
+</section>
+</body>
+</html>

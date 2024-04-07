@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee</title>
+    <link type="text/css" rel="stylesheet" th:href="@{/css/bootstrap.css}">
+</head>
+<body>
+<section class="container flex-column gap-5 p-2">
+    <h1 class="container text-center">Employee</h1>
+    <p th:text="'Date: '+${theDate}" class="form-label"/>
+    <div class="container border-top:1px solid #ddd; margin: 10px 0;"></div>
+    <a class="btn btn-primary p-2 rounded form-label" th:href="@{/api/v1/employees/add}">Add Employee</a>
+    <table class="table">
+        <thead>
+        <tr class="">
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Position</th>
+            <th>Address</th>
+            <th>Mobile Number</th>
+            <th>Email</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="employee : ${employees}">
+            <td th:text="${employee.firstName}"/>
+            <td th:text="${employee.lastName}"/>
+            <td th:text="${employee.position}"/>
+            <td th:text="${employee.address}"/>
+            <td th:text="${employee.mobileNumber}"/>
+            <td th:text="${employee.email}"/>
+            <td>
+                <a class="btn btn-primary p-2 rounded form-label" th:href="@{/api/v1/employees/update/{id}(id=${employee.id})}">Edit</a>
+                <a class="btn btn-danger p-2 rounded form-label" th:href="@{/api/v1/employees/delete/{id}(id=${employee.id})}">Delete</a>
+            </td>
+        </tbody>
+    </table>
+</section>
+</body>
+</html>

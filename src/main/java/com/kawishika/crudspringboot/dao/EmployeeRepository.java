@@ -1,9 +1,11 @@
 package com.kawishika.crudspringboot.dao;
 
-import com.kawishika.crudspringboot.entity.EmployeeEntity;
+import com.kawishika.crudspringboot.entity.Employee;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.UUID;
+
 @Repository
-public interface EmployeeRepository extends JpaRepository<EmployeeEntity,String> {
+public interface EmployeeRepository extends JpaRepository<Employee, UUID> {
 }
