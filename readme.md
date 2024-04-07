@@ -9,5 +9,7 @@ This is a simple CRUD application that allows users to create, read, update and 
 - Hibernate ORM and Validator
 - Bootstrap
 
-
-
+## Screenshots
+  ![Screenshot from 2024-04-08 00-01-01](https://github.com/HewageNKM/CRUD-Spring-Boot/assets/107237482/a26249a6-7621-4b90-9a25-9afa872ad8f3)
+##
+  ![Screenshot from 2024-04-08 00-01-11](https://github.com/HewageNKM/CRUD-Spring-Boot/assets/107237482/7d5f5f7e-3d60-4106-a83d-30b64e509313)
