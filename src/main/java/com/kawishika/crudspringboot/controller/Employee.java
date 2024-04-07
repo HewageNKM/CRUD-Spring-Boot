@@ -5,6 +5,7 @@ import com.kawishika.crudspringboot.service.EmployeeService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
@@ -26,7 +27,7 @@ public class Employee {
     }
 
     @PostMapping
-    public String saveEmployee(@ModelAttribute("employee") EmployeeDTO employeeDTO){
+    public String saveEmployee(@Validated  @ModelAttribute("employee") EmployeeDTO employeeDTO){
         employeeService.saveEmployee(employeeDTO);
         return "redirect:/api/v1/employees";
     }
